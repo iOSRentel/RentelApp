@@ -7,50 +7,61 @@
 
 import SwiftUI
 import Firebase
+#if !os(iOS)
+import AppKit
+#endif
+
+#if os(macOS)
+@available(iOS 15.0, macOS 11.0, *)
+public typealias NSUIDelegate = NSApplicationDelegate
 
 @main
 struct RentelApp: App {
     
-    #if os(macOS)
-   @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
-   #else
-   @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-   #endif
-
-    var body: some Scene {
-        
-        #if os(iOS)
-        WindowGroup {
-            ContentView()
-        }
-        #else
-        WindowGroup {
-            ContentView()
-        }
-        .windowStyle(HiddenTitleBarWindowStyle())
-        #endif
-
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-#if os(macOS)
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-    private func applicationDidFinishLaunching(_ notification: Notification) {
-        FirebaseApp.configure()
-        
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
     }
 }
+
+#elseif os(iOS)
+@available(iOS 15.0, macOS 11.0, *)
+public typealias NSUIDelegate = UIApplicationDelegate
+@main
+struct RentelApp: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
+
 #else
-class AppDelegate: NSObject, UIApplicationDelegate {
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-    FirebaseApp.configure()
-}
-}
+#error("Unsupported platform")
+#endif
+
+
+class AppDelegate: NSObject, NSUIDelegate{
+    
+#if os(macOS)
+    internal func applicationDidFinishLaunching(_ notification: Notification) {
+        FirebaseApp.configure()
+    }
+#else
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        
+        return true
+    }
 #endif
 }
-}
-        
 
-        
 #if !os(iOS)
 extension NSTextField{
     open override var focusRingType: NSFocusRingType{
