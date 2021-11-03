@@ -34,6 +34,6 @@ struct DashboardView: View {
             })
                 .buttonStyle(PlainButtonStyle())
         }
-        .frame(width: getRect().width / 1.6, height: getRect().height)
+        .frame(width: getRect().width / 1.6, height: getRect().height / 1.6)
     }
 }

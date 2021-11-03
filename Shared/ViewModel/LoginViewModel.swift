@@ -16,6 +16,7 @@ class LoginViewModel: ObservableObject {
     
 // Register Properties
     @Published var isNewUser = false
+    
     @Published var registerUserName = ""
     @Published var registerPassword = ""
     @Published var reEnterPassword = ""

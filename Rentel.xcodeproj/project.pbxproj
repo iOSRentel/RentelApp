@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		66E06286272EAE5D0045CA14 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06285272EAE5D0045CA14 /* CustomTextField.swift */; };
 		66E06287272EAE5D0045CA14 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06285272EAE5D0045CA14 /* CustomTextField.swift */; };
-		66E06289272EAF260045CA14 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06288272EAF260045CA14 /* LoadingScreen.swift */; };
-		66E0628A272EAF260045CA14 /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06288272EAF260045CA14 /* LoadingScreen.swift */; };
+		66E06289272EAF260045CA14 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06288272EAF260045CA14 /* ProgressView.swift */; };
+		66E0628A272EAF260045CA14 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E06288272EAF260045CA14 /* ProgressView.swift */; };
 		66E0628C272EC2BD0045CA14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66E0628B272EC2BD0045CA14 /* GoogleService-Info.plist */; };
 		66E0628D272EC2BD0045CA14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66E0628B272EC2BD0045CA14 /* GoogleService-Info.plist */; };
 		66F2EF732728029F00A96B23 /* RentelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F2EF632728029D00A96B23 /* RentelApp.swift */; };
@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		66E06285272EAE5D0045CA14 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		66E06288272EAF260045CA14 /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		66E06288272EAF260045CA14 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		66E0628B272EC2BD0045CA14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		66F2EF632728029D00A96B23 /* RentelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentelApp.swift; sourceTree = "<group>"; };
 		66F2EF642728029D00A96B23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +66,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		665C893E2732C0F600E15609 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				66E06288272EAF260045CA14 /* ProgressView.swift */,
+				66E06285272EAE5D0045CA14 /* CustomTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		665C893F2732C14C00E15609 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66F2EF652728029E00A96B23 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		665C89402732C16B00E15609 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				66F2EF8F272805CD00A96B23 /* Login.swift */,
+			);
+			path = Authorization;
+			sourceTree = "<group>";
+		};
+		665C89412732C9A000E15609 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				66F2EF642728029D00A96B23 /* ContentView.swift */,
+				66F2EF992728A73800A96B23 /* DashboardView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		665C89422732CA3200E15609 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		665C89432732CA3F00E15609 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		665C89442732CA5100E15609 /* POS */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = POS;
+			sourceTree = "<group>";
+		};
 		66F2EF5D2728029D00A96B23 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +128,7 @@
 				66F2EF8B272804A200A96B23 /* Rentel--iOS--Info.plist */,
 				66E0628B272EC2BD0045CA14 /* GoogleService-Info.plist */,
 				66F2EF622728029D00A96B23 /* Shared */,
+				665C893F2732C14C00E15609 /* Resources */,
 				66F2EF712728029F00A96B23 /* macOS */,
 				66F2EF6B2728029F00A96B23 /* Products */,
 				66F2EF882728048600A96B23 /* Frameworks */,
@@ -82,11 +138,10 @@
 		66F2EF622728029D00A96B23 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				66F2EF8D2728059900A96B23 /* ViewModel */,
-				66F2EF8C2728059100A96B23 /* View */,
-				66F2EF642728029D00A96B23 /* ContentView.swift */,
 				66F2EF632728029D00A96B23 /* RentelApp.swift */,
-				66F2EF652728029E00A96B23 /* Assets.xcassets */,
+				66F2EF8D2728059900A96B23 /* ViewModel */,
+				665C893E2732C0F600E15609 /* Components */,
+				66F2EF8C2728059100A96B23 /* View */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -118,10 +173,11 @@
 		66F2EF8C2728059100A96B23 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				66F2EF8F272805CD00A96B23 /* Login.swift */,
-				66F2EF992728A73800A96B23 /* DashboardView.swift */,
-				66E06285272EAE5D0045CA14 /* CustomTextField.swift */,
-				66E06288272EAF260045CA14 /* LoadingScreen.swift */,
+				665C89412732C9A000E15609 /* Navigation */,
+				665C89402732C16B00E15609 /* Authorization */,
+				665C89422732CA3200E15609 /* Tools */,
+				665C89432732CA3F00E15609 /* Orders */,
+				665C89442732CA5100E15609 /* POS */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,7 +302,7 @@
 				66E06286272EAE5D0045CA14 /* CustomTextField.swift in Sources */,
 				66F2EF9A2728A73800A96B23 /* DashboardView.swift in Sources */,
 				66F2EF932728061C00A96B23 /* LoginViewModel.swift in Sources */,
-				66E06289272EAF260045CA14 /* LoadingScreen.swift in Sources */,
+				66E06289272EAF260045CA14 /* ProgressView.swift in Sources */,
 				66F2EF90272805CD00A96B23 /* Login.swift in Sources */,
 				66F2EF752728029F00A96B23 /* ContentView.swift in Sources */,
 				66F2EF732728029F00A96B23 /* RentelApp.swift in Sources */,
@@ -260,7 +316,7 @@
 				66E06287272EAE5D0045CA14 /* CustomTextField.swift in Sources */,
 				66F2EF9B2728A73800A96B23 /* DashboardView.swift in Sources */,
 				66F2EF942728061C00A96B23 /* LoginViewModel.swift in Sources */,
-				66E0628A272EAF260045CA14 /* LoadingScreen.swift in Sources */,
+				66E0628A272EAF260045CA14 /* ProgressView.swift in Sources */,
 				66F2EF91272805CD00A96B23 /* Login.swift in Sources */,
 				66F2EF762728029F00A96B23 /* ContentView.swift in Sources */,
 				66F2EF742728029F00A96B23 /* RentelApp.swift in Sources */,
